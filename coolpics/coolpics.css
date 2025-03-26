@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+ 
+:root {
+ --primary-color: #52489c;
+ --secondary-color: #59c3c3;
+ --accent-color: #f45b69;
+ --text-dark: #333;
+ --text-light: #ebebeb;
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: Mooli, san-serif;
+ }
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--text-light);
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+header h1 {
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav {
+    display: flex; /* Ensures all links are in a single line */
+    font-size: 1rem;
+    align-items: center; /* Vertically aligns items */
+    justify-content: center; /* Centers the links horizontally */
+    padding: 1rem;
+}
+
+nav a {
+    color: var(--text-light);
+    margin: 0 2rem;
+}
+
+/* Button Style for Menu */
+button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    color: var(--accent-color);
+}
+
+main h2 {
+    text-align: center; /* Centers the text horizontally */
+    margin: 1.5rem 0 0.1rem 0; /* Adds some spacing above and below */
+}
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for narrow screens */
+    gap: 1rem; /* Adds spacing between the images */
+    padding: 1rem;
+    width: fit-content; /* Ensures the gallery only takes up as much space as needed */
+    margin: 0 auto; /* Centers the gallery horizontally */
+}
+
+.gallery img {
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    padding: 0.5rem;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.6); /* Darker and sharper shadow on the bottom and right */
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr; 
+        gap: 1.5rem; 
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem; 
+    }
+
+    nav {
+        display: flex; 
+        justify-content: center; 
+    }
+
+    button {
+        display: none; 
+    }
+}
