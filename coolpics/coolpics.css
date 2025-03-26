@@ -57,11 +57,6 @@ button {
     cursor: pointer;
 }
 
-button:hover,
-button:focus {
-    color: var(--accent-color);
-}
-
 main h2 {
     text-align: center; /* Centers the text horizontally */
     margin: 1.5rem 0 0.1rem 0; /* Adds some spacing above and below */
@@ -93,6 +88,7 @@ footer {
 
 img {
     max-width: 100%;
+    max-height: 100%;
 }
 
 @media screen and (min-width: 700px) {
@@ -100,6 +96,7 @@ img {
         grid-template-columns: 1fr 1fr; 
         gap: 1.5rem; 
     }
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -117,3 +114,44 @@ img {
         display: none; 
     }
 }
+
+/* Hide the menu by default */
+.hide {
+    display: none;
+}
+
+/* Style the menu button */
+.menu-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.viewer img {
+    max-width: 90%;
+    max-height: 70%; /* Prevent the image from being too tall */ /* Optional: Add rounded corners */
+}
+
+.viewer .close-viewer {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 11; /* Ensure it stays above the image */
+}
+
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+    display: grid;
+    grid-template-rows: auto 1fr; /* First row for the button, second for the image */
+    justify-items: center;
+    align-items: center;
+    z-index: 10; /* Ensure it appears above other elements */
+    /* Prevent content from overflowing */
+}
+
