@@ -1,0 +1,104 @@
+/* General Page Styling */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #473144; /* Dark color */
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9; /* Light background */
+}
+
+h1 {
+    color: #473144;
+    text-align: center;
+}
+
+h2 {
+    color: #AF1B3F;
+}
+
+nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    border: 2px solid #EFC69B; /* Gold color */
+    justify-content: flex-end; /* Align to the right */
+    margin: 0 auto; /* Center the navigation block */
+    max-width: 900px; /* Match the width of the main content */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #AF1B3F; /* Red color */
+    font-size: 1.2rem; /* Slightly larger font size */
+    padding: 0.5rem 1rem; /* Add padding for better spacing */
+}
+
+a {
+    text-decoration: none;
+    color: #AF1B3F; /* Red color */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px; /* Match width with navbar */
+    margin: 20px auto;
+}
+
+/* Article Styling */
+.article {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.book-meta {
+    text-align: right;
+    min-width: 150px;
+    padding-right: 15px;
+    border-right: 2px solid #EFC69B;
+}
+
+.book-review {
+    flex: 1;
+}
+
+.book-review img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+}
+
+.filter-form {
+    display: flex;
+    width: 700px;
+    border: 2px solid #EFC69B;
+    margin: 20px;
+}
+
+.skiptocontent a {
+    position: absolute;
+    top: -40px; /* Move it off-screen */
+    left: 0;
+    background: #EFC69B; /* Gold color */
+    color: #473144; /* Dark color */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px; /* Add rounded corners */
+}
+
+.skiptocontent a:focus {
+    top: 0; /* Bring it back on-screen when focused */
+    outline: 2px solid #AF1B3F; /* Add a red outline for better visibility */
+}
+
+
