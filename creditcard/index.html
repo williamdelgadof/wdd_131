@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.png" type="image/png" /> <!-- Favicon link -->
+</head>
+<body>
+
+  <!-- Success and Error Messages -->
+  <div id="card-success" class="hidden">
+    <p>Payment Successful!</p>
+  </div>
+  <div id="form-errors" class="hidden">
+    <p id="card-error">Card error</p>
+  </div>
+
+  <!-- Form Container -->
+  <div id="form-container">
+    
+    <!-- The overlapping cards go here -->
+    <div id="card-container">
+      
+      <!-- BACK of the card -->
+      <div id="card-back">
+        <!-- Black stripe near the top -->
+        <div class="card-stripe"></div>
+
+        <!-- CVC/CVV area -->
+        <div class="cvc-area">
+          <label for="card-cvc">CVC/CVV</label>
+          <input
+            type="text"
+            id="card-cvc"
+            placeholder="xxx"
+            required
+            maxlength="4"
+            minlength="3"
+          />
+        </div>
+      </div>
+
+      <!-- FRONT of the card -->
+      <div id="card-front">
+        <!-- Top row: total + card icon -->
+        <div class="card-header">
+          <span id="card-total">TOTAL: $199</span>
+          <span id="card-icon"> <strong>CC</strong> </span>
+        </div>
+
+        <!-- Card Number -->
+        <label for="card-number">CARD NUMBER</label>
+        <input
+          type="text"
+          id="card-number"
+          placeholder="1234 5678 9101 1020"
+          required
+          maxlength="16"
+        />
+
+        <!-- Bottom row: card holder (left), expiration (right) -->
+        <div class="front-lower">
+          <!-- Card Holder -->
+          <div class="holder-container">
+            <label for="card-holder">CARD HOLDER</label>
+            <input
+              type="text"
+              id="card-holder"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+          <!-- Expiration -->
+          <div class="exp-container">
+            <label>EXPIRATION</label>
+            <div class="exp-inputs">
+              <input
+                type="text"
+                id="card-month"
+                placeholder="MM"
+                required
+                maxlength="2"
+                minlength="2"
+              />
+              <input
+                type="text"
+                id="card-year"
+                placeholder="YY"
+                required
+                maxlength="2"
+                minlength="2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End of card-container -->
+
+    <!-- Hidden token field (if using a payment API like Stripe) -->
+    <input type="text" id="card-token" />
+
+    <!-- Submit Button -->
+    <button type="submit" id="card-btn">Submit</button>
+  </div> <!-- End of form-container -->
+
+</body>
+</html>
+
+
