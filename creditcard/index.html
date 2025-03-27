@@ -18,7 +18,7 @@
   </div>
 
   <!-- Form Container -->
-  <div id="form-container">
+  <form id="form-container" action="#" method="POST">
     
     <!-- The overlapping cards go here -->
     <div id="card-container">
@@ -34,6 +34,7 @@
           <input
             type="text"
             id="card-cvc"
+            name="card-cvc"
             placeholder="xxx"
             required
             maxlength="4"
@@ -55,6 +56,7 @@
         <input
           type="text"
           id="card-number"
+          name="card-number"
           placeholder="1234 5678 9101 1020"
           required
           maxlength="16"
@@ -68,6 +70,7 @@
             <input
               type="text"
               id="card-holder"
+              name="card-holder"
               placeholder="John Doe"
               required
             />
@@ -79,6 +82,7 @@
               <input
                 type="text"
                 id="card-month"
+                name="card-month"
                 placeholder="MM"
                 required
                 maxlength="2"
@@ -87,6 +91,7 @@
               <input
                 type="text"
                 id="card-year"
+                name="card-year"
                 placeholder="YY"
                 required
                 maxlength="2"
@@ -100,11 +105,11 @@
     </div> <!-- End of card-container -->
 
     <!-- Hidden token field (if using a payment API like Stripe) -->
-    <input type="text" id="card-token" />
+    <input type="hidden" id="card-token" name="card-token" />
 
     <!-- Submit Button -->
     <button type="submit" id="card-btn">Submit</button>
-  </div> <!-- End of form-container -->
+  </form> <!-- End of form-container -->
 
 </body>
 </html>

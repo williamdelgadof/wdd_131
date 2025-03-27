@@ -3,25 +3,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  body {
+}
+
+body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
-    padding: 30px 0;
     display: flex;
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */
     height: 100vh; /* Full viewport height */
     margin: 0; /* Remove default margin */
-    background-color: #f9f9f9; /* Optional: Add a light background color */
-  }
-  
-  /* Success & Error Messages */
-  .hidden {
+}
+
+/* Success & Error Messages */
+.hidden {
     display: none;
-  }
-  #card-success,
-  #form-errors {
+}
+
+#card-success,
+#form-errors {
     width: 400px;
     margin: 0 auto 15px;
     padding: 10px;
@@ -30,102 +30,116 @@
     text-align: center;
     font-weight: 600;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  #card-success {
+}
+
+#card-success {
     color: #2b8e00;
-  }
-  #form-errors {
+}
+
+#form-errors {
     color: #d00000;
-  }
-  
-  /* Overlapping Cards Container */
-  #card-container {
+}
+
+/* Form Container */
+#form-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    padding: 20px;
+    position: relative; 
+}
+
+/* Overlapping Cards Container */
+#card-container {
     display: grid;
     grid-template-areas: "cards";
     position: relative;
-    margin-bottom: 20px; 
-  }
-  
-  /* FRONT Card */
-  #card-front {
+    margin-bottom: 20px;
+}
+
+/* FRONT Card */
+#card-front {
     grid-area: cards;
     width: 320px;
     height: 180px;
     background: #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 15px;
     position: relative;
     z-index: 2;
-    transform: translate(0, 0);
-  }
-  
-  /* BACK Card */
-  #card-back {
+    transform: translate(0, 0); /* Keep the front card in place */
+}
+
+/* BACK Card */
+#card-back {
     grid-area: cards;
     width: 320px;
     height: 180px;
     background: #ccc;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
-    transform: translate(80px, 30px);
-  }
-  
-  /* Black stripe on the back card */
-  .card-stripe {
+    transform: translate(80px, 30px); /* Offset the back card */
+}
+
+/* Black stripe on the back card */
+.card-stripe {
     background: #333;
     position: absolute;
     top: 15px;
     left: 0;
     right: 0;
-    height: 40px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  
-  /* CVC area on the back card (bottom right corner) */
-  .cvc-area {
+    height: 40px;  
+}
+
+/* CVC area on the back card (bottom right corner) */
+.cvc-area {
     position: absolute;
     bottom: 10px;
     right: 10px;
-  }
-  .cvc-area label {
+}
+
+.cvc-area label {
     display: block;
     margin-bottom: 5px;
     font-size: 0.8rem;
     text-transform: uppercase;
-  }
-  #card-cvc {
+}
+
+#card-cvc {
     width: 60px;
     height: 25px;
     padding: 3px;
     font-size: 0.9rem;
     border-radius: 4px;
     border: 1px solid #aaa;
-  }
-  
-  /* Front Card Content */
-  .card-header {
+}
+
+/* Front Card Content */
+.card-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
-  }
-  #card-total {
+}
+
+#card-total {
     font-weight: bold;
-  }
-  #card-icon {
+}
+
+#card-icon {
     font-weight: bold;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     font-size: 0.8rem;
     margin-bottom: 5px;
     text-transform: uppercase;
-  }
-  input {
+}
+
+input {
     width: 100%;
     height: 25px;
     padding: 3px;
@@ -133,29 +147,32 @@
     border-radius: 4px;
     border: 1px solid #aaa;
     margin-bottom: 15px;
-  }
-  .front-lower {
+}
+
+.front-lower {
     display: flex;
     justify-content: space-between;
-  }
-  .holder-container,
-  .exp-container {
+}
+
+.holder-container,
+.exp-container {
     display: flex;
     flex-direction: column;
     width: 45%;
-  }
-  .exp-inputs {
+}
+
+.exp-inputs {
     display: flex;
     gap: 5px;
-  }
-  
-  /* Hidden token field */
-  #card-token {
+}
+
+/* Hidden token field */
+#card-token {
     display: none;
-  }
-  
-  /* Submit Button */
-  #card-btn {
+}
+
+/* Submit Button */
+#card-btn {
     background: #fff;
     color: #000;
     border: 1px solid #000;
@@ -163,20 +180,16 @@
     width: 80px;
     height: 30px;
     cursor: pointer;
-    float: right;
     font-size: 0.8rem;
     text-transform: uppercase;
-    margin-top: 20px;
-  }
-  #card-btn:hover {
-    background: #f0f0f0;
-  }
+    position: absolute; /* Position the button absolutely */
+    bottom: -50px; /* Adjust the vertical position */
+    right: 0; /* Align with the right edge of the back card */
+    transform: translateX(60px); /* Offset to match the back card's position */
+}
 
-  #form-container {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
-    padding: 20px;
-  }
+#card-btn:hover {
+    background: #f0f0f0;
+}
 
 
