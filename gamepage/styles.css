@@ -446,3 +446,32 @@ nav a.active {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0);
 }
+
+/* Gameplay Section */
+.gameplay-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111; /* Dark background for contrast */
+    color: #fff;
+}
+
+.gameplay-section h2 {
+    font-size: 2rem;
+    color: #00f7ff;
+    margin-bottom: 20px;
+}
+
+.gameplay-section p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Gameplay Video */
+.gameplay-video {
+    width: 100%;
+    max-width: 800px; /* Limit the video width */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
