@@ -21,10 +21,9 @@
     width: 100%; /* Full width */
     top: 0;
     left: 0;
-    background: rgba(17, 17, 17, 0.9); /* Slight transparency */
+    background: #111; /* Solid dark background */
     z-index: 1000; /* Ensure the navbar is above other elements */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: background 0.3s ease-in-out; /* Smooth transition for scroll effect */
   }
 
   /* 🔹 Logo Styling */
@@ -38,7 +37,7 @@
     color: #fff; /* Highlight part of the logo */
   }
 
-  /* Navigation Links */
+  /* 🔹 Navigation Links */
 nav a {
     text-decoration: none;
     color: #00f7ff;
@@ -50,13 +49,13 @@ nav a {
     transition: all 0.3s ease; /* Smooth hover effect */
 }
 
-/* Hover Effects for Links */
+/* 🔹 Hover Effects for Links */
 nav a:hover {
     background-color: #00f7ff;
     color: #111; /* Change text color on hover */
 }
 
-/* Active Link Styling (Optional) */
+/* 🔹 Active Link Styling (Optional) */
 nav a.active {
     background-color: #00f7ff;
     color: #111;
@@ -164,20 +163,26 @@ nav a.active {
   
   .feature-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around; /* Space out the cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Add more spacing between cards */
+    padding: 20px;
   }
   
   .feature-card {
-    background: #1e1e1e;
-    padding: 20px;
+    text-align: center; /* Center-align the content */
+    padding: 25px;
+    background: linear-gradient(135deg, #1e1e1e, #000000); /* Subtle gradient for the card background */
     border-radius: 12px;
-    width: 280px;
-    box-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
-    transition: transform 0.3s, opacity 0.5s ease-in-out;
-    opacity: 0;
-    transform: translateY(20px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 
+                0 0 15px rgba(0, 247, 255, 0.5); /* Add a glowing light effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-8px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
+                0 0 25px rgba(0, 247, 255, 0.8); /* Stronger glow on hover */
   }
   
   .feature-card.visible {
@@ -186,7 +191,19 @@ nav a.active {
   }
   
   .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    color: #00f7ff;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
   }
   
   /* 🔹 Download Section */
@@ -394,3 +411,38 @@ nav a.active {
   .download-link1:hover {
     background-color: #222;
   }
+
+/* Hero Section Image */
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0);
+}
+
+/* Feature Section Images */
+.feature-image {
+    width: 100%;
+    max-width: 200px; /* Increased size for better visibility */
+    margin-bottom: 15px;
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 247, 255, 0.5), 
+                0 0 20px rgba(0, 247, 255, 0.7); /* Brighter glowing light effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.feature-image:hover {
+    transform: scale(1.1); /* Slightly larger zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 247, 255, 0.7), 
+                0 0 30px rgba(0, 247, 255, 1); /* Stronger glow on hover */
+}
+
+/* Download Section Image */
+.download-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0);
+}
