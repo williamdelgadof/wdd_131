@@ -32,3 +32,17 @@ const observer = new IntersectionObserver(
 );
 
 featureCards.forEach((card) => observer.observe(card));
+
+// Example: Display top features dynamically using objects & array methods
+
+const features = [
+    { title: "Smart Quizzes", icon: "🧠", enabled: true },
+    { title: "Missions", icon: "🎯", enabled: true },
+    { title: "Leaderboards", icon: "🏆", enabled: false }, // disabled feature
+];
+
+// Filter enabled features and log their names
+features
+  .filter(feature => feature.enabled)
+  .map(feature => `${feature.icon} ${feature.title}`)
+  .forEach(item => console.log("Available Feature:", item));
